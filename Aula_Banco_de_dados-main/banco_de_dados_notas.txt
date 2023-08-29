@@ -1,0 +1,8 @@
+tabela 
+	jogador (id_jogador,idade,apelido,posição,...)
+														 
+	torneio(id_torneio,clube,...)                                                  
+														 
+	jogador_torneio(id_jogadortorneio,id_jogador,id_torneio,jogador_d,jogador_r)   
+				id_jogador referencia a tabela jogador				 
+				id_torneio referencia a tabela torneio				 
