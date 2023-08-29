@@ -1,0 +1,27 @@
+codigo renderização de triangulos
+    1)cria 1 triangulo
+    points = [
+        #X    Y    Z
+		0.0, 0.5, 0.0, #cima
+		0.5, -0.5, 0.0, #direita
+		-0.5, -0.5, 0.0 #esquerda
+	]
+    2)a partir do primeiro vértice, desenha 3 vértices
+        glDrawArrays(GL_TRIANGLES, 0, 3)
+
+codigo de renderização de quadrado
+
+    1)cria 2 triangulos
+    points = [
+        # triângulo 1
+		0.5, 0.5, 0.0, #vertice superior direito
+		0.5, -0.5, 0.0, #vertice inferior direito
+		-0.5, -0.5, 0.0, #vertice inferior esquerdo
+		#triângulo 2
+		-0.5, 0.5, 0.0, #vertice superior esquerdo
+		0.5, 0.5, 0.0, #vertice superior direito
+		-0.5, -0.5, 0.0 #vertice inferior esquerdo
+	]
+
+    2)passamos o valor 6 como parâmetro, pois o quadrado é formado por 2 triângulos,
+        glDrawArrays(GL_TRIANGLES, 0, 6)

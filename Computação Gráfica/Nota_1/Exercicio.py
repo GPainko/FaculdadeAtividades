@@ -1,0 +1,61 @@
+import numpy as np
+import math
+
+'matriz = np.random.randint(10, size=(3,3))'
+matriz = np.identity(3)
+print("Matriz inicial:")
+print(matriz)
+
+while True:
+    print("1. Translação")
+    print("2. Rotação")
+    print("3. Escalar")
+    op = int(input("Digite a opção: "))
+    if op == 1:     
+        tx = float(input("digite o valor de tx: "))
+        ty = float(input("digite o valor de ty: "))
+        matriz2 = np.array([[1,0,tx],[0,1,ty],[0,0,1]])
+        print("valores xt yt:")
+        print(matriz2)
+        px = float(input("digite o valor de x: "))
+        py = float(input("digite o valor de y: "))  
+        matriz3 = np.array([[px],[py],[1]])
+        print("matriz do ponto")
+        print(matriz3)
+        matrizt = matriz2.dot(matriz3)
+        print("Translação")
+        print(matrizt)      
+    elif op == 2:
+        sx = float(input("digite o valor de sx: "))
+        sy = float(input("digite o valor de sy: "))
+        matriz2 = np.array([[sx,0,0],[0,sy,0],[0,0,1]])
+        print("valores xt yt:")
+        print(matriz2)
+        px = float(input("digite o valor de x: "))
+        py = float(input("digite o valor de y: "))  
+        matriz3 = np.array([[px],[py],[1]])
+        print("matriz do ponto")
+        print(matriz3)
+        matrizr = matriz2.dot(matriz3)
+        print("rotação")
+        print(matrizr)
+      
+    elif op == 3:
+      angulo = float(input("digite o angulo: "))
+      seno = math.sin(math.radians(angulo))
+      print("o angulo de {} tem seno = {:.2f}".format(angulo,seno))
+      cos = math.cos(math.radians(angulo)) 
+      print("o angulo de {} tem cosseno = {:.2f}".format(angulo,cos))
+      matriz2 = np.array([[cos,(-seno),0],[seno,cos,0],[0,0,1]])
+      print("valores angulos:")
+      print(matriz2)
+      px = float(input("digite o valor de x: "))
+      py = float(input("digite o valor de y: "))  
+      matriz3 = np.array([[px],[py],[1]])
+      print("matriz do ponto")
+      print(matriz3)
+      matrize = matriz2.dot(matriz3)
+      print("Escala")
+      print(matrize)
+    else:
+        print("Opção inválida")
