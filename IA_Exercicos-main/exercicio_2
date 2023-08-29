@@ -1,0 +1,53 @@
+localizado(norte,"Terra Media").
+localizado(sul,"Terra Media").
+localizado(centro-oeste,"Terra Media").
+localizado(leste,"Terra Media").
+localizado(oeste,"Terra Media").
+localizado(sul,"Terra Media").
+localizado(condado, leste).
+localizado(valfenda, centro-oeste).
+localizado(mordor, norte).
+localizado(rohan, oeste).
+localizado(bolsao, condado).
+
+raca(orc,guerreiros,110,mordor).
+raca(orc,rei,110,mordor).
+raca(elfo,magos,1000,valfenda).
+raca(elfo,reis,1000,valfenda).
+raca(elfo,guerreiros,1000,valfenda).
+raca(anao,guerreiros,500,_).
+raca(anao,reis,500,_).
+raca(anao,ferreiros,500,_).
+raca(humano,guerreiro,90,rohan).
+raca(humano,reis,90,rohan).
+raca(humano,magos,90,rohan).
+raca(hobbit,ladroes,100,condado).
+
+nasceu(R, Lugar) :- raca(R,_,_,Lugar).
+nasceu(R, Lugar) :- raca(R,_,-, I),
+                    localizado(I, Lugar).
+
+lingua(orc, orces).
+lingua(elfo, elfico).
+lingua(elfo, portugues).
+lingua(anao, portugues).
+lingua(humano, portugues).
+lingua(hobbit, portugues).
+
+aliado(al1(Raca1),al2(Raca2)):-
+        lingua(Raca1, Lingua),
+        lingua(Raca2, Lingua),
+        raca(Raca1, _, _,_),
+        raca(Raca2, _, _,_),
+        Raca1 \== Raca2.
+
+quantoVive(Raca, T) :-raca(Raca, Categoria, _,_),
+                    raca(Raca, _,T,_),
+                    Categoria \== magos.
+
+quantoVive(Raca,T) :- raca(Raca,Categoria,_,_),
+    				  raca(Raca,Categoria,Tempo,_),
+    				  T is Tempo + 100.
+
+
+
