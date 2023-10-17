@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+<form action="#" th:action="@{/pessoa/save}" th:object="${pessoa}" method="post">
+    <table>
+        <tr>
+            <td>Nome*:</td>
+            <td><input type="text" th:field="*{nome}"></td>
+        </tr>
+        <tr>
+            <td>E-mail*:</td>
+            <td><input type="text" th:field="*{email}"></td>
+        </tr>
+        <tr>
+            <td>Fone*:</td>
+            <td><input type="text" th:field="*{fone}"></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+</body>
+</html>
