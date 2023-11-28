@@ -12,4 +12,4 @@ n = int(input("digite o numero de elementos: "))
 r = int(input("digite o numero de combinação: "))
 
 print(f"O Arranjo de {n}, {r} a {r} é {calcular_arranjo(n,r)}" )
-print(f"O Combinação de {n}, {r} a {r} é {calcular_permutacao(n)}" )
+print(f"O permutaçã de {n}, {r} a {r} é {calcular_permutacao(n)}" )
